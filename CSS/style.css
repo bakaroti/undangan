@@ -8,6 +8,7 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     min-height: 100vh;
+
 }
 /* Desktop Styles */
 @media only screen and (min-width: 601px) {
@@ -32,6 +33,7 @@ body {
 
 ::-webkit-scrollbar {
     display: none;
+    
 }
 
 
@@ -46,6 +48,74 @@ body {
     scroll-behavior: smooth;
 }
 
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    width: 300%; /* Display three slides at a time */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 33.33%; /* Width of each slide */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #CFB975;
+    color: #333;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+
+
+/* .wrapper .prew{
+    white-space: nowrap;
+    font-size: 0px;
+    cursor: pointer;
+}
+.prew img{
+    height: 210px;
+    object-fit: cover;
+    margin-left: 14px;
+    width: 200px;
+}
+
+.prew img:first-child{
+    margin-left: 0px;
+} */
+
 .container {
     width: 600px;
     max-width: 100%;
@@ -57,6 +127,8 @@ body {
     border-radius: 10px;
     color: #EBDCB9;
 }
+
+
 
 .container2 {
     text-align: center;

@@ -32,3 +32,31 @@ function countdown() {
 }
 
 setInterval(countdown, 1000);
+
+const slider = document.querySelector('.slider');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function goToSlide(index) {
+  slider.style.transform = `translateX(-${index * 33.33}%)`; /* Move by 33.33% for each slide */
+}
+
+function goToNextSlide() {
+  if (currentIndex < slides.length - 3) {
+    currentIndex++;
+    goToSlide(currentIndex);
+  }
+}
+
+nextBtn.addEventListener('click', goToNextSlide);
+
+function goToPrevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    goToSlide(currentIndex);
+  }
+}
+
+prevBtn.addEventListener('click', goToPrevSlide);
