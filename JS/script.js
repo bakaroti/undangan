@@ -91,3 +91,29 @@ document.addEventListener('DOMContentLoaded', () => {
   isMusicPlaying = true;
   musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
 });
+
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var name = document.getElementById('name').value;
+  var attendance = document.getElementById('attendance').value;
+  var greetings = document.getElementById('greetings').value;
+  
+  document.getElementById('commentTitle').textContent = "Komentar";
+  
+  var commentContainer = document.getElementById('commentContainer');
+  var commentDiv = document.createElement('div');
+  commentDiv.className = 'comment';
+  commentDiv.innerHTML = `
+    <p><strong>Nama:</strong> ${name}</p>
+    <p><strong>Kehadiran:</strong> ${attendance}</p>
+    <p><strong>Kata Ucapan:</strong> ${greetings}</p>
+  `;
+  
+  commentContainer.appendChild(commentDiv);
+  
+  document.getElementById('commentLayout').style.display = 'block';
+});
+
+document.getElementById('closeButton').addEventListener('click', function() {
+  document.getElementById('commentLayout').style.display = 'none';
+});

@@ -157,7 +157,7 @@
             </section>
         </div>
     </div>
-    <div class="wrapper" id="page9" style=" background-image: url('resource/images/bg.jpg')" >
+    <div class="wrapper" id="page8" style=" background-image: url('resource/images/bg.jpg')" >
         <div class="container2">
             <section class="hidden"><div class="slider-container">
                 <h1>Galerry</h1>
@@ -189,18 +189,39 @@
                 </div>
               </div>
               <div class="rsvp">
-                  <a id="bukaUndanganButton" href="#page10">Next</a>
+                  <a id="bukaUndanganButton" href="#page9">Next</a>
               </div>
               
             </section>
         </div>
     </div>
-    <div class="wrapper" id="page10" style=" background-image: url('resource/images/bg.jpg')" >
-        <div class="container2">
+    <div class="wrapper" id="page9" style=" background-image: url('resource/images/bg.jpg')" >
             <section class="hidden">
-
+                <h1>Form Kehadiran</h1>
+  
+                <form id="commentForm">
+                  <label for="name" style="color: #CFB975;">Nama:</label>
+                  <input type="text" id="name" name="name" required>
+                  
+                  <label for="attendance" style="color: #CFB975;">Pilih Kehadiran:</label>
+                  <select id="attendance" name="attendance" required>
+                    <option value="">-- Pilih Kehadiran --</option>
+                    <option value="hadir">Hadir</option>
+                    <option value="tidak_hadir">Tidak Hadir</option>
+                  </select>
+                  
+                  <label for="greetings" style="color: #CFB975;">Kata Ucapan:</label>
+                  <textarea id="greetings" name="greetings" required></textarea>
+                  
+                  <input type="submit" value="Kirim Formulir">
+                </form>
+              
+                <div id="commentLayout" class="comment-layout">
+                  <h2 id="commentTitle" style="color: #CFB975;">Komentar</h2>
+                  <div id="commentContainer" class="comment-container"></div>
+                  <button id="closeButton">Tutup</button>
+                </div>
             </section>
-        </div>
     </div>
     <script src="JS/script.js"></script>
 </body>
