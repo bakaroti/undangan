@@ -18,7 +18,7 @@ body {
 /* Mobile Styles */
 @media only screen and (max-width: 600px) {
     /* Add your mobile-specific styles here */
-    .container,
+  .container,
   .container2 {
     margin: 0 auto;
     text-align: center;
@@ -67,7 +67,7 @@ body {
   }
   
   .slide img {
-    width: 100%;
+    width: 65%;
     height: auto;
     border-radius: 5px;
   }
@@ -75,13 +75,13 @@ body {
   .prev-btn,
   .next-btn {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background-color: #CFB975;
     color: #333;
     font-size: 12px;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
