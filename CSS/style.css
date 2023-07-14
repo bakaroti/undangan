@@ -43,7 +43,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/resource/images/bg.jpg');
     background-size: cover;
     scroll-behavior: smooth;
 }
