@@ -50,6 +50,8 @@ function goToNextSlide() {
   }
 }
 
+udpate
+
 nextBtn.addEventListener('click', goToNextSlide);
 
 function goToPrevSlide() {
