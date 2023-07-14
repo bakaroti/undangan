@@ -1,18 +1,16 @@
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-        if (entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-        else{
-            entry.target.classList.remove('show');
-        }
-    });
+  entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+      } else {
+          entry.target.classList.remove('show');
+      }
+  });
 });
 
 const hiddenElement = document.querySelectorAll('.hidden');
 hiddenElement.forEach((el) => observer.observe(el));
-
 
 function countdown() {
   const weddingDate = new Date("2032-03-03T08:00:00Z"); // Tanggal pernikahan
@@ -45,20 +43,51 @@ function goToSlide(index) {
 
 function goToNextSlide() {
   if (currentIndex < slides.length - 3) {
-    currentIndex++;
-    goToSlide(currentIndex);
+      currentIndex++;
+      goToSlide(currentIndex);
   }
 }
-
-udpate
 
 nextBtn.addEventListener('click', goToNextSlide);
 
 function goToPrevSlide() {
   if (currentIndex > 0) {
-    currentIndex--;
-    goToSlide(currentIndex);
+      currentIndex--;
+      goToSlide(currentIndex);
   }
 }
 
 prevBtn.addEventListener('click', goToPrevSlide);
+
+const audio = new Audio('resource/music/music.mp3');
+audio.loop = true; // Set to true for continuous playback
+
+// Toggle Music Button
+const musicToggleBtn = document.createElement('button');
+musicToggleBtn.classList.add('music-toggle-btn');
+musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+document.body.appendChild(musicToggleBtn);
+
+let isMusicPlaying = false; // Initial state
+
+musicToggleBtn.addEventListener('click', () => {
+  if (isMusicPlaying) {
+    audio.pause();
+    musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+  } else {
+    audio.play();
+    musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+  }
+  isMusicPlaying = !isMusicPlaying; // Toggle state
+});
+
+audio.addEventListener('ended', () => {
+  audio.currentTime = 0;
+  audio.play();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  audio.play();
+  isMusicPlaying = true;
+  musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+});
